@@ -7,13 +7,13 @@ class PostSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     def validate_title(self, value):
-        if len(value) < 20:
-            raise serializers.ValidationError("Title minimal 20 karakter.")
+        if len(value) < 5:  
+            raise serializers.ValidationError("Title minimal 5 karakter.")
         return value
 
     def validate_content(self, value):
-        if len(value) < 200:
-            raise serializers.ValidationError("Content minimal 200 karakter.")
+        if len(value) < 50: 
+            raise serializers.ValidationError("Content minimal 50 karakter.")
         return value
 
     def validate_category(self, value):
